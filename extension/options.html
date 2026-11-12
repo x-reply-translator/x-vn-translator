@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>X 베트남어 번역기 설정</title>
+<style>
+  body{font:14px/1.5 system-ui,sans-serif;max-width:520px;margin:32px auto;padding:0 16px;color:#0f1419}
+  h1{font-size:20px}
+  label{display:block;margin:14px 0 4px;font-weight:600}
+  input,select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cfd9de;border-radius:8px;font:inherit}
+  .hint{font-size:12px;color:#536471;margin-top:4px}
+  button{margin-top:18px;padding:8px 18px;border:0;border-radius:999px;background:#1d9bf0;color:#fff;font:600 14px system-ui,sans-serif;cursor:pointer}
+  #msg{margin-top:10px;font-size:13px}
+  .oa[hidden]{display:none}
+</style>
+</head>
+<body>
+<h1>X 베트남어 번역기 설정</h1>
+<p class="hint">API 키는 이 브라우저에만 저장되고, 아래에서 고른 API 주소로만 보내져요. 기존 「X 댓글 번역기」와는 설정이 따로입니다.</p>
+
+<label for="provider">AI 서비스</label>
+<select id="provider">
+  <option value="anthropic">Anthropic (Claude)</option>
+  <option value="openai">OpenAI 호환 (OpenAI·OpenRouter·DeepSeek 등)</option>
+</select>
+
+<div class="oa" id="baseRow">
+  <label for="baseUrl">API 주소</label>
+  <input id="baseUrl" placeholder="https://api.openai.com/v1">
+  <div class="hint">예: https://openrouter.ai/api/v1 · https://api.deepseek.com/v1</div>
+</div>
+
+<label for="model">모델</label>
+<input id="model" placeholder="claude-haiku-5-5">
+<div class="hint">빠르고 싼 모델 추천. Anthropic 기본값: claude-haiku-5-5</div>
+
+<label for="apiKey">API 키</label>
+<input id="apiKey" type="password" autocomplete="off">
+
+<button id="save">저장</button>
+<div id="msg"></div>
+<script src="options.js"></script>
+</body>
+</html>
